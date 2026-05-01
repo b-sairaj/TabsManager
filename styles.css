@@ -184,13 +184,8 @@ footer {
 }
 .install-btn img { width: 22px; height: 22px; }
 
-/* ── TOC ── */
-.toc-wrap {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-.toc {
+/* ── Layout ── */
+.content {
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: var(--radius);
