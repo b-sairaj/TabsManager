@@ -293,7 +293,7 @@ body:has(> header.hero) {
 .mp-header h3 { font-size: 15px; font-weight: 700; }
 .mp-header p  { font-size: 11px; opacity: .8; margin-top: 2px; }
 .mp-panel {
-  background: #fff;
+  background: var(--panel);
   border-bottom: 1px solid var(--border);
   padding: 10px 12px;
 }
@@ -303,7 +303,7 @@ body:has(> header.hero) {
   padding: 5px 0;
   font-size: 12px; font-weight: 600;
 }
-.mp-row + .mp-row { border-top: 1px solid #f1f5f9; }
+.mp-row + .mp-row { border-top: 1px solid var(--border); }
 .mp-toggle {
   width: 32px; height: 18px;
   background: #0f766e;
