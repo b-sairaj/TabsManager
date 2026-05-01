@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tabs Manager – How to Use</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="hero">
+  <h1>Tabs Manager — How to Use</h1>
+  <p>A complete guide to every feature in Tabs Manager – Auto Group and Save</p>
+  <a class="install-btn"
+     href="https://chromewebstore.google.com/detail/tabs-manager-auto-group-a/fpbkahbolcccgeacngklfppkdkoooggn"
+     target="_blank" rel="noopener noreferrer">
+    <img src="https://www.google.com/chrome/static/images/chrome-logo.svg" alt="Chrome" />
+    Add to Chrome — It's Free
+  </a>
+  <nav class="nav" aria-label="Site navigation">
+    <a href="index.html">How to Use</a>
+    <a href="support.html">Support</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+  </nav>
+</header>
+
+<!-- TOC -->
+<div class="toc-wrap">
+  <div class="toc">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#popup">Toolbar Popup — Quick Actions</a></li>
+      <li><a href="#grouping-modes">Grouping Modes</a></li>
+      <li><a href="#auto-group">Auto-Group &amp; Sort &amp; Collapse</a></li>
+      <li><a href="#custom-rules">Custom Rules</a></li>
+      <li><a href="#match-conditions">Match Conditions &amp; Logic</a></li>
+      <li><a href="#save-restore">Save &amp; Restore Groups</a></li>
+      <li><a href="#options">Options Page</a></li>
+      <li><a href="#tips">Tips &amp; Gotchas</a></li>
+    </ol>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- ── 1. Popup ── -->
+  <section class="section" id="popup">
+    <div class="section-header">
+      <div class="section-icon"><img src="assets/favicon.svg" alt="" width="22" height="22" /></div>
+      <h2>Toolbar Popup — Quick Actions</h2>
+    </div>
+    <div class="section-body">
+      <p style="font-size:14px;color:var(--muted);margin-bottom:16px;">
+        Click the extension icon in your browser toolbar to open the popup. It gives you the most common controls without leaving the page you're on.
+      </p>
+
+      <div class="mockup-popup">
+        <div class="mp-header">
+          <h3>Tabs Manager</h3>
+          <p>Rule: shoppingTabs</p>
+        </div>
+        <div class="mp-panel">
+          <div class="mp-row">Group tabs <div class="mp-toggle"></div></div>
+          <div class="mp-row">Sort groups <div class="mp-toggle off"></div></div>
+          <div class="mp-configure">
+            <span>Rule: shoppingTabs</span>
+            <button>⚙ Configure</button>
+          </div>
+        </div>
+        <div class="mp-panel">
+          <div class="mp-row" style="margin-bottom:8px;font-weight:700;">Current Groups</div>
+          <div class="mp-group-list">
+            <div class="mp-group-item"><span class="swatch" style="background:#1a73e8"></span> Docs (3 tabs) <button>Save</button></div>
+            <div class="mp-group-item"><span class="swatch" style="background:#d93025"></span> Shopping (5 tabs) <button>Save</button></div>
+          </div>
+        </div>
+        <div class="mp-panel">
+          <div class="mp-row" style="font-weight:700;margin-bottom:6px;">Saved Groups</div>
+          <div class="mp-group-list">
+            <div class="mp-group-item"><span class="swatch" style="background:#1e8e3e"></span> Work Setup <button>Restore</button></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="features" style="margin-top:20px;">
+        <div class="feature"><div class="feature-icon">⏺</div><div class="feature-body"><strong>Group Tabs toggle</strong><p>Enable or disable all automatic tab grouping. When turned off, existing groups remain but no new grouping happens.</p></div></div>
+        <div class="feature"><div class="feature-icon">🔤</div><div class="feature-body"><strong>Sort Groups toggle</strong><p>When on, groups are sorted alphabetically after every grouping operation. Ungrouped tabs are pushed to the end.</p></div></div>
+        <div class="feature"><div class="feature-icon">📍</div><div class="feature-body"><strong>Active mode / rule display <span class="tag-new-inline">NEW</span></strong><p>Shows your current grouping mode (e.g. "Grouped by domain") or active custom rule name (e.g. "Rule: shoppingTabs") at a glance.</p></div></div>
+        <div class="feature"><div class="feature-icon">⚙️</div><div class="feature-body"><strong>Configure button <span class="tag-new-inline">NEW</span></strong><p>Opens the full Settings / Options page in a new tab.</p></div></div>
+        <div class="feature"><div class="feature-icon">💾</div><div class="feature-body"><strong>Save current group</strong><p>Click "Save" next to any current group to persist it for later use.</p></div></div>
+        <div class="feature"><div class="feature-icon">♻️</div><div class="feature-body"><strong>Restore saved group</strong><p>Click "Restore" to reopen a previously saved tab group in the current window.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 2. Grouping Modes ── -->
+  <section class="section" id="grouping-modes">
+    <div class="section-header">
+      <div class="section-icon">🗂️</div>
+      <h2>Grouping Modes</h2>
+    </div>
+    <div class="section-body">
+      <p style="font-size:14px;color:var(--muted);margin-bottom:16px;">
+        Choose how tabs are grouped in <strong>Settings → Group by</strong>. The active mode is shown in the popup.
+      </p>
+
+      <table>
+        <thead>
+          <tr><th>Mode</th><th>What it groups by</th><th>Example</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Full domain</td>
+            <td>Exact subdomain</td>
+            <td>docs.google.com and mail.google.com → separate groups</td>
+          </tr>
+          <tr>
+            <td>Base domain</td>
+            <td>Root domain only</td>
+            <td>docs.google.com and mail.google.com → one "google.com" group</td>
+          </tr>
+          <tr>
+            <td>Tab title <span class="tag-new-inline">NEW</span></td>
+            <td>Full page title</td>
+            <td>All tabs titled "GitHub – Pull Requests" group together</td>
+          </tr>
+          <tr>
+            <td>Custom Rules <span class="tag-new-inline">NEW</span></td>
+            <td>Your defined conditions</td>
+            <td>Tabs matching amazon.com + /cart → "Shopping" group (blue)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="mockup-options">
+        <div class="mo-hero"><h3>Settings</h3></div>
+        <div class="mo-panel">
+          <h4>Group By</h4>
+          <div class="mo-row">
+            <span>Group by</span>
+            <select><option>Custom Rule</option></select>
+          </div>
+          <div class="mo-row">
+            <span>Active rule</span>
+            <span style="font-weight:700;color:#0f766e">shoppingTabs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 3. Auto-Group / Sort / Collapse ── -->
+  <section class="section" id="auto-group">
+    <div class="section-header">
+      <div class="section-icon">⚡</div>
+      <h2>Auto-Group, Sort &amp; Collapse</h2>
+    </div>
+    <div class="section-body">
+      <div class="features">
+        <div class="feature"><div class="feature-icon">🤖</div><div class="feature-body"><strong>Auto-group new tabs</strong><p>When on, any tab you open is automatically placed into the correct group as soon as it finishes loading. Turn this off if you want to group manually only.</p></div></div>
+        <div class="feature"><div class="feature-icon">🔡</div><div class="feature-body"><strong>Sort groups alphabetically <span class="tag-new-inline">NEW</span></strong><p>After each grouping run, all groups are sorted A–Z. Ungrouped tabs are moved to the end. Enable in Settings or from the popup toggle.</p></div></div>
+        <div class="feature"><div class="feature-icon">📦</div><div class="feature-body"><strong>Collapse groups after grouping <span class="tag-new-inline">NEW</span></strong><p>When on, every group is automatically collapsed (minimized) after it is created or updated. Keeps your tab bar clean. Enable in Settings → Collapse groups after grouping.</p></div></div>
+        <div class="feature"><div class="feature-icon">📌</div><div class="feature-body"><strong>Ignore pinned tabs</strong><p>When on, pinned tabs are never moved or grouped. Enable in Settings → Ignore pinned tabs.</p></div></div>
+      </div>
+
+      <div class="tip">
+        <span class="tip-icon">💡</span>
+        <span>Collapse and Sort work together well: sort groups A–Z, then collapse them so only the group labels are visible in the tab bar — one clean row of named groups.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 4. Custom Rules ── -->
+  <section class="section" id="custom-rules">
+    <div class="section-header">
+      <div class="section-icon">📐</div>
+      <h2>Custom Rules</h2>
+      <span class="tag-new">NEW</span>
+    </div>
+    <div class="section-body">
+      <p style="font-size:14px;color:var(--muted);margin-bottom:16px;">
+        Custom Rules let you define exactly which tabs belong in which group. Go to <strong>Settings → Group by Custom Rule → Edit Rules</strong>.
+      </p>
+
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-text"><strong>Create a rule</strong><p>Click <em>+ Add Rule</em>. Give it a name (e.g. "Work mode" or "shoppingTabs").</p></div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text"><strong>Add a group inside the rule</strong><p>Each rule can have multiple groups. Set a Group Title (e.g. "Shopping") and pick a Color.</p></div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text"><strong>Add match conditions</strong><p>Choose a condition type from the dropdown, type the value, and click <strong>+</strong> (or press Enter). The condition appears as a chip.</p></div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-text"><strong>Select the active rule</strong><p>Use the <em>Active Rule</em> dropdown at the top of the editor to choose which rule is applied when grouping runs.</p></div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-text"><strong>Save Rules</strong><p>Click <em>Save Rules</em>. Tabs are immediately regrouped using the new rule.</p></div></div>
+      </div>
+
+      <div class="mockup-rules" style="margin-top:20px;">
+        <div class="mr-header"><h3>Custom Rules Editor</h3></div>
+        <div class="mr-body">
+          <div class="mr-rule">
+            <div class="mr-rule-head">
+              <span class="mr-rule-name">shoppingTabs</span>
+              <span style="font-size:11px;color:var(--muted)">Active rule</span>
+            </div>
+            <div class="mr-group">
+              <div class="mr-group-meta">
+                <span class="swatch" style="background:#1a73e8;width:12px;height:12px;border-radius:50%;"></span>
+                <input style="border:none;font-size:12px;font-weight:600;background:transparent;" value="Shopping" readonly />
+                <select style="font-size:11px;padding:2px 4px;border:1px solid #e2e8f0;border-radius:5px;"><option>blue</option></select>
+              </div>
+              <div style="display:flex;align-items:center;gap:4px;flex-wrap:wrap;">
+                <span class="chip"><span class="ct">host</span> amazon.com, walmart.com</span>
+                <span class="chip-and">AND</span>
+                <span class="chip"><span class="ct">url</span> /cart, /checkout</span>
+              </div>
+              <div class="mr-add-row">
+                <select><option>title</option></select>
+                <input placeholder="e.g. My Orders" readonly />
+                <button class="btn-plus">+</button>
+              </div>
+            </div>
+            <button style="width:100%;font-size:11px;padding:6px;border:1px dashed #99d6d0;border-radius:8px;background:#f0fdfa;color:#0f766e;cursor:default;">+ Add Group</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 5. Match Conditions ── -->
+  <section class="section" id="match-conditions">
+    <div class="section-header">
+      <div class="section-icon">🔍</div>
+      <h2>Match Conditions &amp; Logic</h2>
+      <span class="tag-new">NEW</span>
+    </div>
+    <div class="section-body">
+      <table>
+        <thead>
+          <tr><th>Type</th><th>Matches against</th><th>Example values</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>host</td><td>Tab hostname (no www)</td><td>amazon.com, walmart.com</td></tr>
+          <tr><td>URL</td><td>Full tab URL</td><td>/cart, /checkout, ?tab=order</td></tr>
+          <tr><td>title</td><td>Tab page title</td><td>Invoice, Dashboard, Order</td></tr>
+          <tr><td>regex <span class="tag-new-inline">NEW</span></td><td>Full tab URL via RegExp</td><td>^https://.*\.docs\.google\.com/</td></tr>
+        </tbody>
+      </table>
+
+      <div class="features" style="margin-top:16px;">
+        <div class="feature"><div class="feature-icon">➕</div><div class="feature-body"><strong>AND across types</strong><p>If you add both <em>host</em> and <em>title</em> conditions, the tab must satisfy both. All types you add must match.</p></div></div>
+        <div class="feature"><div class="feature-icon">🔀</div><div class="feature-body"><strong>OR within a type</strong><p>If you enter "amazon.com, walmart.com" for <em>host</em>, the tab matches if its host contains either value — not both.</p></div></div>
+        <div class="feature"><div class="feature-icon">🚫</div><div class="feature-body"><strong>Each type can only be added once per group</strong><p>Once you add a "host" condition, it disappears from the dropdown. Remove the chip to re-add it with different values.</p></div></div>
+        <div class="feature"><div class="feature-icon">✅</div><div class="feature-body"><strong>Regex is validated before adding</strong><p>If you type an invalid regular expression, the field turns red and the chip is not added until the pattern is fixed.</p></div></div>
+      </div>
+
+      <div class="tip">
+        <span class="tip-icon">💡</span>
+        <span><strong>Comma-separated values</strong> — You can type multiple values separated by commas in one go: "amazon.com, ebay.com, etsy.com" creates three separate match values inside one condition chip.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 6. Save & Restore ── -->
+  <section class="section" id="save-restore">
+    <div class="section-header">
+      <div class="section-icon">💾</div>
+      <h2>Save &amp; Restore Groups</h2>
+    </div>
+    <div class="section-body">
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-text"><strong>Group your tabs first</strong><p>Tabs must already be in a group (shown under "Current Groups") before you can save them.</p></div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text"><strong>Click Save</strong><p>Click the "Save" button next to any current group — in the popup or on the options page. The group is saved with its name and color.</p></div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text"><strong>Restore later</strong><p>Under "Saved Groups", click "Restore". The group is recreated and its tabs are reopened in the current window.</p></div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-text"><strong>Delete when no longer needed</strong><p>Click "Delete" next to any saved group to remove it from storage.</p></div></div>
+      </div>
+
+      <div class="tip">
+        <span class="tip-icon">💡</span>
+        <span>Saved groups store tab URLs and the group color. Restoring reopens all tabs and recreates the group — even if those tabs were previously closed.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 7. Options Page ── -->
+  <section class="section" id="options">
+    <div class="section-header">
+      <div class="section-icon">⚙️</div>
+      <h2>Options Page</h2>
+    </div>
+    <div class="section-body">
+      <p style="font-size:14px;color:var(--muted);margin-bottom:16px;">
+        Open via <strong>⚙ Configure</strong> in the popup, or right-click the extension icon → <em>Options</em>.
+      </p>
+
+      <div class="mockup-options">
+        <div class="mo-hero"><h3>Settings</h3></div>
+        <div class="mo-panel">
+          <h4>Preferences</h4>
+          <div class="mo-row"><span>Enable grouping</span><div class="mp-toggle"></div></div>
+          <div class="mo-row"><span>Group by</span><select><option>Custom Rule</option></select></div>
+          <div class="mo-row"><span>Ignore pinned tabs</span><div class="mp-toggle"></div></div>
+          <div class="mo-row"><span>Auto-group new tabs</span><div class="mp-toggle"></div></div>
+          <div class="mo-row"><span>Sort groups</span><div class="mp-toggle off"></div></div>
+          <div class="mo-row"><span>Collapse groups after grouping</span><div class="mp-toggle off"></div></div>
+        </div>
+      </div>
+
+      <table style="margin-top:16px;">
+        <thead><tr><th>Setting</th><th>What it does</th></tr></thead>
+        <tbody>
+          <tr><td>Enable grouping</td><td>Master switch. Off = no grouping runs, existing groups stay.</td></tr>
+          <tr><td>Group by</td><td>Selects the grouping mode. Choosing "Custom Rule" reveals the Edit Rules button.</td></tr>
+          <tr><td>Ignore pinned tabs</td><td>Excludes pinned tabs from all grouping operations.</td></tr>
+          <tr><td>Auto-group new tabs</td><td>Groups tabs automatically as they finish loading.</td></tr>
+          <tr><td>Sort groups</td><td>Sorts groups A–Z after each grouping run.</td></tr>
+          <tr><td>Collapse groups <span class="tag-new-inline">NEW</span></td><td>Collapses all groups automatically after grouping.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ── 8. Tips ── -->
+  <section class="section" id="tips">
+    <div class="section-header">
+      <div class="section-icon">💡</div>
+      <h2>Tips &amp; Gotchas</h2>
+    </div>
+    <div class="section-body">
+      <div class="features">
+        <div class="feature"><div class="feature-icon">🔁</div><div class="feature-body"><strong>Changing the group mode regroups immediately</strong><p>Switching the "Group by" dropdown (in Settings or the Rules editor) triggers an immediate regroup of all open tabs.</p></div></div>
+        <div class="feature"><div class="feature-icon">🔑</div><div class="feature-body"><strong>Rule names must be unique</strong><p>If two rules have the same name (case-insensitive), saving will be blocked. The rule name input turns red on blur if a duplicate is detected.</p></div></div>
+        <div class="feature"><div class="feature-icon">📋</div><div class="feature-body"><strong>Only the active rule is used for grouping</strong><p>You can have many saved rules, but only one is applied at a time. Switch the active rule in the Rules editor — the change takes effect immediately.</p></div></div>
+        <div class="feature"><div class="feature-icon">🧪</div><div class="feature-body"><strong>Regex is tested against the full URL</strong><p>The full URL including protocol and path is tested — e.g. <code>^https://github\.com/.*/pull</code> matches all GitHub pull request URLs.</p></div></div>
+        <div class="feature"><div class="feature-icon">🌐</div><div class="feature-body"><strong>Only http/https tabs are grouped</strong><p>Chrome extension pages, new tab pages, and other browser URLs are automatically excluded from all grouping.</p></div></div>
+        <div class="feature"><div class="feature-icon">💬</div><div class="feature-body"><strong>A single tab is never auto-grouped</strong><p>A new group is only created when 2 or more ungrouped tabs share the same grouping key. A lone tab stays ungrouped unless it can be added to an existing group.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- .content -->
+
+</body>
+</html>
