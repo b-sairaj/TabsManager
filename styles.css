@@ -298,7 +298,7 @@ body:has(> header.hero) {
 .mp-header h3 { font-size: 15px; font-weight: 700; }
 .mp-header p  { font-size: 11px; opacity: .8; margin-top: 2px; }
 .mp-panel {
-  background: #fff;
+  background: var(--panel);
   border-bottom: 1px solid var(--border);
   padding: 10px 12px;
 }
@@ -308,7 +308,7 @@ body:has(> header.hero) {
   padding: 5px 0;
   font-size: 12px; font-weight: 600;
 }
-.mp-row + .mp-row { border-top: 1px solid #f1f5f9; }
+.mp-row + .mp-row { border-top: 1px solid var(--border); }
 .mp-toggle {
   width: 32px; height: 18px;
   background: #0f766e;
@@ -334,7 +334,7 @@ body:has(> header.hero) {
 .mp-configure span { font-size: 11px; color: var(--muted); }
 .mp-configure button {
   font-size: 11px; font-weight: 700;
-  background: #f1f5f9; border: 1px solid var(--border);
+  background: var(--bg); color: var(--ink); border: 1px solid var(--border);
   border-radius: 8px; padding: 4px 8px; cursor: default;
 }
 .mp-group-list { display: grid; gap: 5px; }
@@ -370,7 +370,7 @@ body:has(> header.hero) {
 }
 .mo-hero h3 { font-size: 15px; font-weight: 700; }
 .mo-panel {
-  background: #fff;
+  background: var(--panel);
   border-top: 1px solid var(--border);
   padding: 14px 16px;
 }
@@ -379,12 +379,13 @@ body:has(> header.hero) {
   display: flex; align-items: center;
   justify-content: space-between;
   padding: 6px 0;
-  border-bottom: 1px solid #f1f5f9;
+  border-bottom: 1px solid var(--border);
   font-size: 12px;
 }
 .mo-row:last-child { border-bottom: none; }
 .mo-row select {
   font-size: 11px; padding: 3px 6px;
+  background: var(--panel); color: var(--ink);
   border: 1px solid var(--border); border-radius: 6px;
 }
 
@@ -402,7 +403,7 @@ body:has(> header.hero) {
   color: #fff; padding: 12px 16px;
 }
 .mr-header h3 { font-size: 14px; font-weight: 700; }
-.mr-body { background: #fff; padding: 14px 16px; }
+.mr-body { background: var(--panel); padding: 14px 16px; }
 .mr-rule {
   border: 1px solid var(--border);
   border-radius: 10px; padding: 10px 12px;
@@ -417,32 +418,33 @@ body:has(> header.hero) {
   background: transparent; border: none; color: var(--ink);
 }
 .mr-group {
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border);
   border-radius: 8px; padding: 8px 10px;
-  margin-bottom: 6px; background: #f8fafc;
+  margin-bottom: 6px; background: var(--bg);
 }
 .mr-group-meta {
   display: flex; align-items: center; gap: 6px; margin-bottom: 6px;
 }
 .chip {
   display: inline-flex; align-items: center; gap: 4px;
-  background: #e0f2f0; border: 1px solid #99d6d0;
+  background: var(--accent-light); border: 1px solid var(--accent);
   border-radius: 20px; padding: 2px 8px 2px 6px;
   font-size: 11px;
 }
-.chip .ct { font-size: 9px; font-weight: 800; color: #0f766e; text-transform: uppercase; }
+.chip .ct { font-size: 9px; font-weight: 800; color: var(--new-tag); text-transform: uppercase; }
 .chip-and { font-size: 9px; font-weight: 700; color: var(--muted); text-transform: uppercase; padding: 0 2px; }
 .mr-add-row {
   display: flex; gap: 6px; margin-top: 6px; align-items: center;
 }
 .mr-add-row select, .mr-add-row input {
   font-size: 11px; padding: 3px 6px;
+  background: var(--panel); color: var(--ink);
   border: 1px solid var(--border); border-radius: 6px;
 }
 .mr-add-row input { flex: 1; }
 .btn-plus {
   width: 22px; height: 22px;
-  background: #e0f2f0; color: #0f766e;
+  background: var(--accent-light); color: var(--new-tag);
   border: none; border-radius: 50%;
   font-size: 16px; font-weight: 700;
   display: flex; align-items: center; justify-content: center;
@@ -472,4 +474,10 @@ tr:last-child td { border-bottom: none; }
 @media (max-width: 600px) {
   .hero h1 { font-size: 26px; }
   .mockup-popup { width: 100%; }
+}
+
+/* ── Dark mode: residual overrides (no variable equivalent) ── */
+@media (prefers-color-scheme: dark) {
+  .mp-toggle.off { background: #374357; }
+  .tip { border-color: #854d0e; }
 }
