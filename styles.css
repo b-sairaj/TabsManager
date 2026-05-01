@@ -147,19 +147,22 @@ footer {
    Index page — How to Use
    ════════════════════════════════════ */
 
-/* Remove body padding on index page (full-width hero layout) */
-body:has(> header.hero) {
-  padding: 0;
-}
-
-.hero {
-  background: linear-gradient(135deg, #0f766e 0%, #065f56 100%);
-  color: #fff;
-  padding: 56px 24px 48px;
+/* Landing page hero — index.html only */
+.page .hero.hero-landing {
+  padding: 48px 24px 40px;
   text-align: center;
 }
-.hero h1 { font-size: 36px; font-weight: 800; margin-bottom: 10px; }
-.hero p  { font-size: 17px; opacity: 0.88; max-width: 560px; margin: 0 auto; }
+.page .hero.hero-landing h1 {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.page .hero.hero-landing p {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 560px;
+  margin: 0 auto;
+}
 .install-btn {
   display: inline-flex;
   align-items: center;
@@ -184,7 +187,7 @@ body:has(> header.hero) {
 /* ── TOC ── */
 .toc-wrap {
   max-width: 860px;
-  margin: 32px auto;
+  margin: 0 auto;
   padding: 0 24px;
 }
 .toc {
@@ -202,7 +205,7 @@ body:has(> header.hero) {
 /* ── Layout ── */
 .content {
   max-width: 860px;
-  margin: 0 auto 60px;
+  margin: 0 auto;
   padding: 0 24px;
   display: grid;
   gap: 36px;
