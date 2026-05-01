@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tabs Manager – How to Use</title>
+  <meta name="description" content="Learn how to use Tabs Manager - Auto Group and Save, including grouping modes, custom rules, saved groups, and options settings." />
+  <title>Tabs Manager - How to Use</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -12,7 +13,7 @@
 <main class="page">
 <header class="hero hero-landing">
   <h1>Tabs Manager — How to Use</h1>
-  <p>A complete guide to every feature in Tabs Manager – Auto Group and Save</p>
+  <p>A complete guide to every feature in Tabs Manager - Auto Group and Save</p>
   <a class="install-btn"
      href="https://chromewebstore.google.com/detail/tabs-manager-auto-group-a/fpbkahbolcccgeacngklfppkdkoooggn"
      target="_blank" rel="noopener noreferrer">
@@ -137,8 +138,8 @@
         <div class="mo-panel">
           <h4>Group By</h4>
           <div class="mo-row">
-            <span>Group by</span>
-            <select><option>Custom Rule</option></select>
+            <label for="grouping-mode-preview">Group by</label>
+            <select id="grouping-mode-preview"><option>Custom Rule</option></select>
           </div>
           <div class="mo-row">
             <span>Active rule</span>
@@ -201,8 +202,10 @@
             <div class="mr-group">
               <div class="mr-group-meta">
                 <span class="swatch" style="background:#1a73e8;width:12px;height:12px;border-radius:50%;"></span>
-                <input style="border:none;font-size:12px;font-weight:600;background:transparent;" value="Shopping" readonly />
-                <select style="font-size:11px;padding:2px 4px;border:1px solid #e2e8f0;border-radius:5px;"><option>blue</option></select>
+                <label class="sr-only" for="rule-group-title-preview">Group title</label>
+                <input id="rule-group-title-preview" style="border:none;font-size:12px;font-weight:600;background:transparent;" value="Shopping" readonly />
+                <label class="sr-only" for="rule-group-color-preview">Group color</label>
+                <select id="rule-group-color-preview" style="font-size:11px;padding:2px 4px;border:1px solid #e2e8f0;border-radius:5px;"><option>blue</option></select>
               </div>
               <div style="display:flex;align-items:center;gap:4px;flex-wrap:wrap;">
                 <span class="chip"><span class="ct">host</span> amazon.com, walmart.com</span>
@@ -210,8 +213,10 @@
                 <span class="chip"><span class="ct">url</span> /cart, /checkout</span>
               </div>
               <div class="mr-add-row">
-                <select><option>title</option></select>
-                <input placeholder="e.g. My Orders" readonly />
+                <label class="sr-only" for="rule-condition-type-preview">Condition type</label>
+                <select id="rule-condition-type-preview"><option>title</option></select>
+                <label class="sr-only" for="rule-condition-value-preview">Condition value</label>
+                <input id="rule-condition-value-preview" placeholder="e.g. My Orders" readonly />
                 <button class="btn-plus">+</button>
               </div>
             </div>
@@ -293,7 +298,7 @@
         <div class="mo-panel">
           <h4>Preferences</h4>
           <div class="mo-row"><span>Enable grouping</span><div class="mp-toggle"></div></div>
-          <div class="mo-row"><span>Group by</span><select><option>Custom Rule</option></select></div>
+          <div class="mo-row"><label for="options-group-by-preview">Group by</label><select id="options-group-by-preview"><option>Custom Rule</option></select></div>
           <div class="mo-row"><span>Ignore pinned tabs</span><div class="mp-toggle"></div></div>
           <div class="mo-row"><span>Auto-group new tabs</span><div class="mp-toggle"></div></div>
           <div class="mo-row"><span>Sort groups</span><div class="mp-toggle off"></div></div>
