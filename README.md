@@ -31,16 +31,7 @@ Every page includes a nav bar inside the hero with links to all three pages:
 |---|---|
 | `assets/favicon.svg` | Site favicon used on all pages |
 
-## Publish Options
-
-- GitHub Pages
-- Netlify
-- Vercel
-- Any static web host
 
 The root `index.html` loads by default on all platforms.
 
-## Recommended Web Store URLs
 
-- **Support URL:** `https://<your-domain>/support.html`
-- **Privacy Policy URL:** `https://<your-domain>/privacy-policy.html`
