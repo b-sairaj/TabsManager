@@ -491,3 +491,25 @@ tr:last-child td { border-bottom: none; }
   .mp-toggle.off { background: #374357; }
   .tip { border-color: #854d0e; }
 }
+
+.preferred-source {
+  margin-top: 12px;
+}
+
+.preferred-source-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 10px;
+  padding: 8px 16px;
+  border: 1px solid #444;
+  border-radius: 999px;
+  color: #222;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.preferred-source-link:hover {
+  background: #222;
+  color: #fff;
+}
